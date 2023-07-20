@@ -3,8 +3,8 @@ const {Web3} = require('web3')
 const {interface, bytecode} = require('./compile')
 
 const provider = new HDWalletProvider(
-    'nominee scare badge tissue rifle aware wheat delay budget edge ask sample',
-    'https://sepolia.infura.io/v3/b210630ad62a4910a64f2ab361c2210a'
+    'float lens piece duty damp syrup reveal beauty actor rail develop access',
+    'https://sepolia.infura.io/v3/450ed840520f4dd89b363abeada288da'
 )
 const web3 = new Web3(provider);
 
@@ -16,6 +16,7 @@ const deploy = async () => {
     .deploy({data: bytecode, arguments: ['Hi There']})
     .send({gas: '1000000', from: accounts[0]})
 
-    console.log('COntract deployed to ', result.options.address)
+    console.log('Contract deployed to ', result.options.address)
+    provider.engine.stop()
 }
 deploy()
